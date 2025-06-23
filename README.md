@@ -1,4 +1,4 @@
-# CASE COZMOPOL
+# e-COMMERCE CASE
 
 Bu proje, standart ve varyasyonlu ürün yönetimi için Node.js, Express, Sequelize ve PostgreSQL kullanılarak hazırlanmıştır. Swagger ile API dokümantasyonu sunar ve Docker Compose ile kolayca ayağa kaldırılır.
 
