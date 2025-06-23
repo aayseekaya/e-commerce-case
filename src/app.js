@@ -11,7 +11,7 @@ const swaggerOptions = {
   swaggerDefinition: {
     openapi: '3.0.0',
     info: {
-      title: 'CASE COZMOPOL API',
+      title: 'e-COMMERCE CASE API',
       version: '1.0.0',
       description: 'Ürün ve varyasyon API dokümantasyonu'
     },
@@ -26,7 +26,7 @@ const swaggerSpec = swaggerJsdoc(swaggerOptions);
 app.use('/api-docs', swaggerUi.serve, swaggerUi.setup(swaggerSpec));
 
 app.get('/', (req, res) => {
-  res.send('CASE COZMOPOL API Çalışıyor!');
+  res.send('e-COMMERCE CASE API Çalışıyor!');
 });
 
 const productRoutes = require('./routes/product');
