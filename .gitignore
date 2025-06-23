@@ -20,11 +20,7 @@ logs/
 .DS_Store
 *.swp
 
-# Uploads klasörü (demo görseller hariç)
-uploads/
-!uploads/.gitkeep
-!uploads/product-images/
-!uploads/product-images/*
+
 
 # Docker
 *.pid
