@@ -181,6 +181,3 @@ function toCamelCase(obj) {
   }
   return obj;
 }
-
-const product = await Product.findOne();
-console.log(product.toJSON()); 

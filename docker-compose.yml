@@ -13,7 +13,7 @@ services:
       - db_data:/var/lib/postgresql/data
   app:
     build: .
-    command: sh -c "npm install && npx sequelize-cli db:migrate && npm start"
+    command: sh -c "npm install && npx sequelize-cli db:migrate && npx sequelize-cli db:seed:all && npm run start"
     volumes:
       - .:/usr/src/app
     ports:
