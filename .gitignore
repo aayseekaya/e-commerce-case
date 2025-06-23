@@ -1,0 +1,36 @@
+# Node.js
+node_modules/
+npm-debug.log
+yarn-debug.log
+yarn-error.log
+
+# Çevresel dosyalar
+.env
+.env.*
+
+# Veritabanı
+*.sqlite
+*.sqlite3
+
+# Loglar
+logs/
+*.log
+
+# Çıktı ve geçici dosyalar
+.DS_Store
+*.swp
+
+# Uploads klasörü (demo görseller hariç)
+uploads/
+!uploads/.gitkeep
+!uploads/product-images/
+!uploads/product-images/*
+
+# Docker
+*.pid
+
+# VSCode
+.vscode/
+
+# Webstorm
+.idea
