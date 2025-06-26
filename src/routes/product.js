@@ -393,24 +393,25 @@ router.get('/products/:productId/images', productController.getProductImages);
  *   post:
  *     summary: Ürüne veya renge dosya olarak görsel yükler
  *     tags: [Görseller]
- *     consumes:
- *       - multipart/form-data
  *     parameters:
  *       - in: path
  *         name: productId
  *         required: true
  *         schema:
  *           type: integer
- *       - in: formData
- *         name: image
- *         type: file
- *         required: true
- *         description: Yüklenecek görsel dosyası
- *       - in: formData
- *         name: color_id
- *         type: integer
- *         required: false
- *         description: Varyasyonlu ürünlerde renk ID'si
+ *     requestBody:
+ *       required: true
+ *       content:
+ *         multipart/form-data:
+ *           schema:
+ *             type: object
+ *             properties:
+ *               image:
+ *                 type: string
+ *                 format: binary
+ *               color_id:
+ *                 type: integer
+ *                 description: Varyasyonlu ürünlerde renk ID'si
  *     responses:
  *       201:
  *         description: Yüklenen görselin kaydı

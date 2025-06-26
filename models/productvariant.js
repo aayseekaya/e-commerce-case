@@ -10,8 +10,8 @@ module.exports = (sequelize, DataTypes) => {
     price: DataTypes.DECIMAL,
     stock: DataTypes.INTEGER,
     barcode: DataTypes.STRING,
-    createdAt: { type: DataTypes.DATE, field: 'created_at' },
-    updatedAt: { type: DataTypes.DATE, field: 'updated_at' }
+    createdAt: { type: DataTypes.DATE, field: 'createdAt' },
+    updatedAt: { type: DataTypes.DATE, field: 'updatedAt' }
   }, {
     tableName: 'ProductVariants',
     underscored: true

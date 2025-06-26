@@ -6,8 +6,8 @@ module.exports = (sequelize, DataTypes) => {
   const Color = sequelize.define('Color', {
     name: DataTypes.STRING,
     hexCode: { type: DataTypes.STRING, field: 'hex_code' },
-    createdAt: { type: DataTypes.DATE, field: 'created_at' },
-    updatedAt: { type: DataTypes.DATE, field: 'updated_at' }
+    createdAt: { type: DataTypes.DATE, field: 'createdAt' },
+    updatedAt: { type: DataTypes.DATE, field: 'updatedAt' }
   }, {
     tableName: 'Colors',
     underscored: true

@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     variantId: { type: DataTypes.INTEGER, field: 'variant_id' },
     colorId: { type: DataTypes.INTEGER, field: 'color_id' },
     imageUrl: { type: DataTypes.TEXT, field: 'image_url' },
-    createdAt: { type: DataTypes.DATE, field: 'created_at' },
-    updatedAt: { type: DataTypes.DATE, field: 'updated_at' }
+    createdAt: { type: DataTypes.DATE, field: 'createdAt' },
+    updatedAt: { type: DataTypes.DATE, field: 'updatedAt' }
   }, {
     tableName: 'ProductImages',
     underscored: true

@@ -1,6 +1,7 @@
 const { Product, ProductVariant, Color, ProductImage } = require('../../models');
 const { Op } = require('sequelize');
 
+
 // Ürünler
 exports.getAllProducts = async (req, res) => {
   const { color_id } = req.query;
@@ -66,8 +67,10 @@ exports.deleteProduct = async (req, res) => {
 exports.createVariant = async (req, res) => {
   const { productId } = req.params;
   const product = await Product.findByPk(productId);
+  console.log(product);
   if (!product) return res.status(404).json({ error: 'Ürün bulunamadı' });
-  if (!product.is_variant) return res.status(400).json({ error: 'Bu ürüne varyasyon eklenemez (standart ürün)!' });
+  console.log(product);
+  if (!product.isVariant) return res.status(400).json({ error: 'Bu ürüne varyasyon eklenemez (standart ürün)!' });
   // Barcode benzersizliği kontrolü
   const exists = await ProductVariant.findOne({ where: { barcode: req.body.barcode } });
   if (exists) return res.status(400).json({ error: 'Bu barcode zaten kullanılıyor!' });
@@ -132,7 +135,7 @@ exports.addProductImage = async (req, res) => {
   if (!product) return res.status(404).json({ error: 'Ürün bulunamadı' });
   // Standart ürünse, sadece product_id ile eklenir (color_id ve variant_id olmadan)
   // Varyasyonlu ürünse, color_id zorunlu olmalı
-  if (product.is_variant && !req.body.color_id) {
+  if (product.isVariant && !req.body.colorId) {
     return res.status(400).json({ error: 'Varyasyonlu ürünlerde görsel eklerken color_id zorunludur!' });
   }
   const image = await ProductImage.create({ ...req.body, product_id: productId });
@@ -153,7 +156,7 @@ exports.uploadProductImage = async (req, res) => {
   const { color_id } = req.body;
   const product = await Product.findByPk(productId);
   if (!product) return res.status(404).json({ error: 'Ürün bulunamadı' });
-  if (product.is_variant && !color_id) {
+  if (product.isVariant && !colorId) {
     return res.status(400).json({ error: 'Varyasyonlu ürünlerde color_id zorunludur!' });
   }
   if (!req.file) return res.status(400).json({ error: 'Görsel dosyası zorunludur!' });
